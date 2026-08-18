@@ -47,14 +47,12 @@ The project follows the same general operational model as other Kubeflow operato
 
 ### List of existing and potential integrations with Kubeflow Core components
 
+
 - **Kubeflow Pipelines**: Pipelines can validate and publish semantic models, or query certified metrics as pipeline inputs and evaluation outputs.
 - **Kubeflow Model Registry**: Model metadata can reference the semantic model version and governed metrics used to train, evaluate, or monitor a model.
 - **Kubeflow Trainer**: Training jobs can consume reproducible, governed analytical definitions instead of embedding business logic in individual jobs.
-- **KServe**: Inference services and agents can use Semantic Operator through MCP or REST to retrieve governed business context.
 - **Kubeflow Notebooks**: Data scientists can discover and query certified metrics without copying SQL or metric definitions into notebooks.
-- **Kubeflow Profiles**: Future integration can map profile identity and namespace boundaries to semantic authorization and model visibility.
-- **Kubeflow Dashboard**: A future UI could expose semantic model health, schema drift, published versions, and governed query access.
-- **Spark Operator**: Spark jobs can prepare physical datasets that Semantic Operator binds to certified semantic models. The projects remain independently deployable.
+- **Kubeflow Spark Operator**: Spark jobs can prepare physical datasets that Semantic Operator binds to certified semantic models. The projects remain independently deployable.
 
 ### Short Description / Functionality
 
