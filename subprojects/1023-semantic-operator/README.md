@@ -185,7 +185,7 @@ Multi-tenant serving across namespaces and richer attribute-based policies that 
 #### Donation readiness
 
 - Make the repository and issue tracker public
-- Add `OWNERS`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `RELEASE.md`, and `ADOPTERS.md`
+- Add `OWNERS`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `RELEASE.md`, and `ADOPTERS.md`
 - Complete provenance, dependency-license, trademark, and employer-authorization reviews
 - Adopt DCO checks and Kubeflow issue and pull request templates
 - Define a security response and release process
