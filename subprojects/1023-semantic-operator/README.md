@@ -114,9 +114,9 @@ The project is currently maintained by Vara Bonthu and Manabu McCloskey. It does
 
 ### Website
 
-https://kubedai.github.io/semantic-operator (Private repo)
+https://kubedai.github.io/semantic-operator
 
-The documentation can move or redirect to a Kubeflow-managed location after acceptance.
+The project already includes a dedicated documentation website built with Astro and Starlight and published through GitHub Pages. It covers architecture, installation, security, development, extension interfaces, and runnable examples. After acceptance, the site will move to Kubeflow-managed hosting and branding, with redirects from the existing location where possible.
 
 ### GitHub repository
 
@@ -140,13 +140,17 @@ Meeting notes will use Kubeflow community infrastructure after the project is ac
 
 The project provides a Helm-based quickstart and runnable examples for StarRocks and Trino. The chart requires an existing reachable query engine and deploys the operator and server as namespace-scoped Kubernetes workloads.
 
-Documentation: https://kubedai.github.io/semantic-operator/start/quickstart (Private repo)
+Documentation: https://kubedai.github.io/semantic-operator/start/quickstart
 
 ### Project Documentation
 
 Documentation covers architecture, access and credentials, semantic model authoring, development, extension interfaces, and runnable examples.
 
-Documentation: https://kubedai.github.io/semantic-operator (Private repo)
+Documentation: https://kubedai.github.io/semantic-operator
+
+### Proposed Maturity
+
+Semantic Operator proposes entering Kubeflow at the Experimental maturity level. The project is functional but does not yet have a public release, public adopter list, or broad community ownership. Progression will follow [Kubeflow's published subproject maturity requirements](../maturity_requirements.md).
 
 ### Security Profile
 
@@ -196,6 +200,7 @@ Multi-tenant serving across namespaces and richer attribute-based policies that 
 - Transfer the repository to the Kubeflow GitHub organization after approval
 - Move image publication and documentation to community-managed infrastructure
 - Align installation patterns with Kubeflow manifests and supported distributions
+- Work with Kubeflow Community Distribution maintainers on optional inclusion after the project has a supported Kubeflow release, manifests, and integration tests
 - Define integration examples for Kubeflow Pipelines, KServe, Model Registry, Trainer, Notebooks, and Profiles
 - Add conformance and upgrade tests across supported Kubernetes versions
 
@@ -208,12 +213,15 @@ Multi-tenant serving across namespaces and richer attribute-based policies that 
 - Add scalable compiled-artifact storage beyond the Kubernetes ConfigMap size boundary
 - Improve policy expressiveness while preserving deterministic planning and compile-time enforcement
 - Track [Apache Ossie](https://ossie.apache.org/) evolution and maintain explicit compatibility documentation
+- Publish a compatibility matrix covering supported Apache Ossie specification versions, expression dialects, and executable query engines
 
 ### Other Information
 
 Semantic Operator is different from an LLM text-to-SQL gateway. The LLM is not trusted to construct joins, aggregations, policies, or SQL. It can select from certified semantic concepts exposed through MCP. The server validates that request and creates deterministic SQL from a versioned model.
 
 The proposal also does not ask Kubeflow to own Apache Ossie. Semantic Operator is an independent Kubernetes implementation that consumes the Apache Ossie specification and adds Kubernetes lifecycle, schema drift checking, governance, serving protocols, and query-engine integrations.
+
+The maintainers intend to collaborate with the Apache Ossie community, contribute implementation feedback, and reduce avoidable compatibility breaks as the specification evolves. Semantic Operator aims to serve as a Kubernetes reference implementation of the specification, subject to alignment with the Apache Ossie community. Kubernetes-specific extensions will remain separate from the portable Ossie document.
 
 ## Metrics
 
@@ -268,7 +276,7 @@ These values should be refreshed immediately before the proposal pull request is
    - [ ] Yes
    - [x] No
 
-Not required. This repo comes with its own website hosted on Github pages.
+A dedicated documentation website exists today on GitHub Pages. Moving it to Kubeflow-managed hosting and branding is part of the proposed transition.
 
 1. Blog/Social Media
    - [] Yes
@@ -278,7 +286,7 @@ We will write a blog once the repo is moved to Kubeflow
 
 ## Proposed Working Group
 
-The maintainers propose the Kubeflow Data Working Group as the initial home because Semantic Operator governs access to analytical data and complements Spark Operator. The Steering Committee and Working Group chairs may identify a different or joint home based on the project's agent, serving, and metadata integrations.
+The maintainers propose the Kubeflow Agents Working Group as the initial home because governed semantic access through MCP is a core capability for AI agents. The `wg-agents` charter and Working Group registration are currently proposed in [PR #1025](https://github.com/kubeflow/community/pull/1025). Subject to approval of that proposal and confirmation by the Working Group leads and Steering Committee, Semantic Operator will collaborate through the Agents Working Group while continuing to work with the Data Working Group and Spark Operator maintainers on analytical-data and processing integrations.
 
 ## Proposed Transfer Plan
 
